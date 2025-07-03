@@ -3,148 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arraiá da Família - Convite Especial</title>
+    <title>Convite para Arraial</title>
     <style>
+        :root {
+            --cor-primaria: #D35400;
+            --cor-secundaria: #F39C12;
+            --cor-fundo: #FFF5E6;
+            --cor-texto: #5D4037;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #FFF5E6;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: var(--cor-fundo);
             margin: 0;
             padding: 0;
-            text-align: center;
-            color: #8B4513;
+            color: var(--cor-texto);
         }
         
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            text-align: center;
         }
         
-        header {
-            background-color: #FF6347;
+        .convite {
+            background: white;
+            border-radius: 15px;
             padding: 20px;
-            border-radius: 10px 10px 0 0;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border: 5px dashed var(--cor-primaria);
+        }
+        
+        .convite:before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--cor-primaria), var(--cor-secundaria));
+            z-index: -1;
+            filter: blur(20px);
         }
         
         h1 {
-            font-size: 2.5em;
+            color: var(--cor-primaria);
+            font-size: 2.8em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
-        .banner {
-            width: 100%;
-            border-radius: 0 0 10px 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        .subtitulo {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: var(--cor-secundaria);
         }
         
-        .details {
-            background-color: white;
-            padding: 20px;
+        .detalhes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .detalhe-item {
+            background: var(--cor-fundo);
+            padding: 15px;
             border-radius: 10px;
-            margin-bottom: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        .bandeirinhas {
-            display: flex;
-            justify-content: space-around;
-            margin: 30px 0;
-            flex-wrap: wrap;
+        .detalhe-item img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 10px;
         }
         
-        .bandeirinha {
-            width: 80px;
-            margin: 10px;
-            animation: sway 3s infinite alternate;
-        }
-        
-        @keyframes sway {
-            0% { transform: rotate(-5deg); }
-            100% { transform: rotate(5deg); }
-        }
-        
-        .botao-confirmar {
+        .botao {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #FF6347;
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.2em;
-            margin-top: 20px;
+            margin: 20px 0;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
-        .botao-confirmar:hover {
-            background-color: #E55337;
-            transform: scale(1.05);
+        .botao:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .bandeirinhas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .bandeirinha {
+            position: absolute;
+            width: 40px;
+            animation: sway 4s infinite alternate;
+        }
+        
+        @keyframes sway {
+            0% { transform: rotate(-10deg); }
+            100% { transform: rotate(10deg); }
         }
         
         footer {
-            margin-top: 40px;
+            margin-top: 30px;
             font-style: italic;
-            color: #8B4513;
-        }
-        
-        .elementos-tematicos {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-        }
-        
-        .elemento {
-            width: 60px;
+            color: var(--cor-texto);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Arraiá da Família</h1>
-            <p>Venha curtir uma noite de festança junina conosco!</p>
-        </header>
-        
-        <img src="https://i.imgur.com/JrQZ3aP.jpg" alt="Banner Arraial" class="banner">
-        
-        <div class="details">
-            <h2>📅 29 de Junho de 2024</h2>
-            <h2>⏰ A partir das 19:00</h2>
-            <h2>📍 Sítio do Vovô - Estrada do Arraial, KM 12</h2>
-            
-            <div class="elementos-tematicos">
-                <img src="https://i.imgur.com/5xXwX9X.png" alt="Chapéu de Palha" class="elemento">
-                <img src="https://i.imgur.com/8YQwQ9X.png" alt="Sanfona" class="elemento">
-                <img src="https://i.imgur.com/3zXwX9X.png" alt="Balão" class="elemento">
-                <img src="https://i.imgur.com/7xXwX9X.png" alt="Fogueira" class="elemento">
+        <div class="convite">
+            <!-- Bandeirinhas decorativas -->
+            <div class="bandeirinhas">
+                <img src="https://cdn-icons-png.flaticon.com/512/4392/4392522.png" class="bandeirinha" style="top:10%; left:10%;">
+                <img src="https://cdn-icons-png.flaticon.com/512/4392/4392522.png" class="bandeirinha" style="top:30%; left:80%;">
+                <img src="https://cdn-icons-png.flaticon.com/512/4392/4392522.png" class="bandeirinha" style="top:70%; left:15%;">
+                <img src="https://cdn-icons-png.flaticon.com/512/4392/4392522.png" class="bandeirinha" style="top:85%; left:75%;">
             </div>
             
-            <p>Teremos comidas típicas, quadrilha, pescaria, bingo e muito forró!</p>
-            <p>Traje a rigor: Vestido caipira ou xadrez</p>
+            <h1>Arraiá</h1>
+            <p class="subtitulo">Você está convidado para nossa festa junina!</p>
             
-            <button class="botao-confirmar" onclick="window.location.href='confirmacao.html'">
+            <div class="detalhes">
+                <div class="detalhe-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3652/3652191.png" alt="Calendário">
+                    <h3>Data</h3>
+                    <p>[Insira a data aqui]</p>
+                </div>
+                
+                <div class="detalhe-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2088/2088617.png" alt="Relógio">
+                    <h3>Horário</h3>
+                    <p>[Insira o horário]</p>
+                </div>
+                
+                <div class="detalhe-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="Localização">
+                    <h3>Local</h3>
+                    <p>[Insira o local]</p>
+                </div>
+            </div>
+            
+            <p>Traje caipira é opcional mas muito bem-vindo!</p>
+            <p>Teremos comidas típicas, música ao vivo e muitas surpresas!</p>
+            
+            <button class="botao" onclick="window.location.href='confirmar.html'">
                 Confirmar Presença
             </button>
+            
+            <footer>
+                <p>Esperamos você para uma noite de diversão e alegria!</p>
+            </footer>
         </div>
-        
-        <div class="bandeirinhas">
-            <img src="https://i.imgur.com/1xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="https://i.imgur.com/2xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="https://i.imgur.com/3xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="https://i.imgur.com/4xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="https://i.imgur.com/5xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
-        </div>
-        
-        <footer>
-            <p>"Ah! Que saudades que eu tenho da aurora da minha vida..."</p>
-            <p>Contamos com sua presença para tornar essa noite inesquecível!</p>
-        </footer>
     </div>
 </body>
 </html>

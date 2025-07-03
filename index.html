@@ -1,13 +1,150 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+ <!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jean Carlos Convite</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Arraiá da Família - Convite Especial</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FFF5E6;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            color: #8B4513;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #FF6347;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .banner {
+            width: 100%;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .details {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .bandeirinhas {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .bandeirinha {
+            width: 80px;
+            margin: 10px;
+            animation: sway 3s infinite alternate;
+        }
+        
+        @keyframes sway {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        .botao-confirmar {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #FF6347;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .botao-confirmar:hover {
+            background-color: #E55337;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            margin-top: 40px;
+            font-style: italic;
+            color: #8B4513;
+        }
+        
+        .elementos-tematicos {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .elemento {
+            width: 60px;
+        }
+    </style>
 </head>
 <body>
- <a href="festajunina.html" class="botao"> ARRAIA DO BARBOSA</a>
+    <div class="container">
+        <header>
+            <h1>Arraiá da Família</h1>
+            <p>Venha curtir uma noite de festança junina conosco!</p>
+        </header>
+        
+        <img src="https://i.imgur.com/JrQZ3aP.jpg" alt="Banner Arraial" class="banner">
+        
+        <div class="details">
+            <h2>📅 29 de Junho de 2024</h2>
+            <h2>⏰ A partir das 19:00</h2>
+            <h2>📍 Sítio do Vovô - Estrada do Arraial, KM 12</h2>
+            
+            <div class="elementos-tematicos">
+                <img src="https://i.imgur.com/5xXwX9X.png" alt="Chapéu de Palha" class="elemento">
+                <img src="https://i.imgur.com/8YQwQ9X.png" alt="Sanfona" class="elemento">
+                <img src="https://i.imgur.com/3zXwX9X.png" alt="Balão" class="elemento">
+                <img src="https://i.imgur.com/7xXwX9X.png" alt="Fogueira" class="elemento">
+            </div>
+            
+            <p>Teremos comidas típicas, quadrilha, pescaria, bingo e muito forró!</p>
+            <p>Traje a rigor: Vestido caipira ou xadrez</p>
+            
+            <button class="botao-confirmar" onclick="window.location.href='confirmacao.html'">
+                Confirmar Presença
+            </button>
+        </div>
+        
+        <div class="bandeirinhas">
+            <img src="https://i.imgur.com/1xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
+            <img src="https://i.imgur.com/2xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
+            <img src="https://i.imgur.com/3xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
+            <img src="https://i.imgur.com/4xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
+            <img src="https://i.imgur.com/5xXwX9X.png" alt="Bandeirinha" class="bandeirinha">
+        </div>
+        
+        <footer>
+            <p>"Ah! Que saudades que eu tenho da aurora da minha vida..."</p>
+            <p>Contamos com sua presença para tornar essa noite inesquecível!</p>
+        </footer>
+    </div>
 </body>
 </html>
-

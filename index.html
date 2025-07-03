@@ -1,50 +1,226 @@
- </head>
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite de Festa Junina</title>
+    <style>
+        :root {
+            --cor-laranja: #FF6B35;
+            --cor-amarelo: #FFD166;
+            --cor-vermelho: #EF476F;
+            --cor-marrom: #8B4513;
+            --cor-bege: #FFF5E6;
+        }
+        
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: var(--cor-bege);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--cor-marrom);
+        }
+        
+        .convite {
+            background: white;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            border: 5px dashed var(--cor-laranja);
+            text-align: center;
+        }
+        
+        .convite::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--cor-vermelho),
+                var(--cor-vermelho) 10px,
+                var(--cor-amarelo) 10px,
+                var(--cor-amarelo) 20px
+            );
+        }
+        
+        h1 {
+            color: var(--cor-laranja);
+            font-size: 2.8em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+        }
+        
+        .subtitulo {
+            font-size: 1.3em;
+            color: var(--cor-vermelho);
+            margin-bottom: 30px;
+        }
+        
+        .detalhes {
+            background-color: var(--cor-bege);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+            position: relative;
+        }
+        
+        .detalhes::before {
+            content: "✻";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: var(--cor-laranja);
+            background: white;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+        }
+        
+        .detalhe-item {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .icone {
+            width: 30px;
+            height: 30px;
+            background-color: var(--cor-laranja);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        .botao {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, var(--cor-laranja), var(--cor-vermelho));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        
+        .botao:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        
+        .bandeirinhas {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .bandeirinha {
+            width: 40px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--cor-vermelho), var(--cor-amarelo));
+            margin: 0 5px;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: rotate(0deg);
+            animation: sway 3s infinite alternate;
+        }
+        
+        @keyframes sway {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        
+        footer {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--cor-marrom);
+        }
+        
+        .elementos-tematicos {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .elemento {
+            width: 50px;
+            height: 50px;
+            margin: 0 10px;
+            background-color: var(--cor-amarelo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Arraiá da Família</h1>
-            <p>Venha curtir uma noite de festança junina conosco!</p>
-        </header>
+    <div class="convite">
+        <h1>Arraiá da Família</h1>
+        <p class="subtitulo">Você está convidado para nossa festança junina!</p>
         
-        <img src="banner-arraial.jpg" alt="Banner Arraial" class="banner">
-        
-        <div class="details">
-            <div class="info-item">
-                <img src="calendario.png" alt="Calendário">
+        <div class="detalhes">
+            <div class="detalhe-item">
+                <span class="icone">📅</span>
                 <span>29 de Junho de 2024</span>
             </div>
             
-            <div class="info-item">
-                <img src="relogio.png" alt="Relógio">
+            <div class="detalhe-item">
+                <span class="icone">⏰</span>
                 <span>A partir das 19:00</span>
             </div>
             
-            <div class="info-item">
-                <img src="localizacao.png" alt="Localização">
+            <div class="detalhe-item">
+                <span class="icone">📍</span>
                 <span>Sítio do Vovô - Estrada do Arraial, KM 12</span>
             </div>
-            
-            <div class="elementos-tematicos">
-                <img src="chapeu.png" alt="Chapéu de Palha" class="elemento">
-                <img src="sanfona.png" alt="Sanfona" class="elemento">
-                <img src="balao.png" alt="Balão" class="elemento">
-                <img src="fogueira.png" alt="Fogueira" class="elemento">
-            </div>
-            
-            <p>Teremos comidas típicas, quadrilha, pescaria, bingo e muito forró!</p>
-            <p>Traje a rigor: Vestido caipira ou xadrez</p>
-            
-            <button class="botao-confirmar" onclick="window.location.href='confirmacao.html'">
-                Confirmar Presença
-            </button>
         </div>
         
+        <div class="elementos-tematicos">
+            <div class="elemento">🎩</div>
+            <div class="elemento">🎪</div>
+            <div class="elemento">🔥</div>
+            <div class="elemento">🎵</div>
+        </div>
+        
+        <p>Teremos comidas típicas, quadrilha, pescaria, bingo e muito forró!</p>
+        <p>Traje a rigor: Vestido caipira ou xadrez</p>
+        
+        <button class="botao" onclick="window.location.href='confirmar.html'">
+            Confirmar Presença
+        </button>
+        
         <div class="bandeirinhas">
-            <img src="bandeirinha1.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="bandeirinha2.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="bandeirinha3.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="bandeirinha4.png" alt="Bandeirinha" class="bandeirinha">
-            <img src="bandeirinha5.png" alt="Bandeirinha" class="bandeirinha">
+            <div class="bandeirinha"></div>
+            <div class="bandeirinha"></div>
+            <div class="bandeirinha"></div>
+            <div class="bandeirinha"></div>
+            <div class="bandeirinha"></div>
         </div>
         
         <footer>
